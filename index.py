@@ -23,4 +23,6 @@ def plural_form(vol, noun1 = '-', noun2 = '-', noun3 = '-'):
         else:
             noun = noun3
 
-    return print(str(i) + ' ' + noun)
+    return noun
+
+print(vol, plural_form(vol, 'яблоко', 'яблок', 'яблока'))
