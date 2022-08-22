@@ -1,22 +1,22 @@
-# """Функция fizz_buzz"""
+"""Функция fizz_buzz"""
 
-# def fizz_buzz(*args):
-#     result = 0
-#     for i in range(args[0], args[1]+1):
-#         if i % 3 == 0 and i % 5 == 0:
-#             result += i
-#     return result
+def fizz_buzz(*args):
+    result = 0
+    for i in range(args[0], args[1]+1):
+        if i % 3 == 0 and i % 5 == 0:
+            result += i
+    return result
 
-# print('1000-20000:', fizz_buzz(1000, 20000))
+print('1000-20000:', fizz_buzz(1000, 20000))
 
 
 """Функция plural_form"""
-i = 6
-noun1 = 'яблоко'
-noun2 = 'яблок'
-noun3 = 'яблока'
+i = 3
 
-def plural_form(i):
+def plural_form(i, **kwargs):
+    noun1 = kwargs.get('noun1', '')
+    noun2 = kwargs.get('noun2', '')
+    noun3 = kwargs.get('noun3', '')
     i = int(str(i)[-2:])
 
     if i > 9 and i < 21 or i%10 > 4 and i%10 < 10:
@@ -29,4 +29,4 @@ def plural_form(i):
 
     return noun
 
-print(str(i) + ' ' + plural_form(i))
+print(str(i) + ' ' + plural_form(i, noun1='яблоко', noun2='яблок', noun3='яблока'))
