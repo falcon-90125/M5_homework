@@ -11,25 +11,22 @@
 
 
 """Функция plural_form"""
-i = 745
+i = 6
 noun1 = 'яблоко'
 noun2 = 'яблок'
 noun3 = 'яблока'
 
 def plural_form(i):
-    i = str(i)
-    i = int(i[-2:])
+    i = int(str(i)[-2:])
 
-    if i > 4 and i < 21:
+    if i > 9 and i < 21 or i%10 > 4 and i%10 < 10:
         noun = noun2
     else:
-        i = str(i)
-        i = int(i[-1])
-        if i == 1:
+        if i%10 == 1:
             noun = noun1
         else:
             noun = noun3
 
     return noun
 
-print(plural_form(i))
+print(str(i) + ' ' + plural_form(i))
