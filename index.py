@@ -12,7 +12,7 @@ print('1000-20000:', fizz_buzz(1000, 20000))
 
 """Функция plural_form"""
 
-def plural_form(vol, noun1 = '-', noun2 = '-', noun3 = '-'):
+def plural_form(vol, noun1, noun2, noun3):
     i = int(str(vol)[-2:])
 
     if i > 9 and i < 21 or i%10 > 4 and i%10 < 10:
@@ -25,4 +25,4 @@ def plural_form(vol, noun1 = '-', noun2 = '-', noun3 = '-'):
 
     return noun
 
-print(vol, plural_form(vol, 'яблоко', 'яблок', 'яблока'))
+print(vol, plural_form(vol, noun1, noun2, noun3))
