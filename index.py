@@ -11,13 +11,9 @@ print('1000-20000:', fizz_buzz(1000, 20000))
 
 
 """Функция plural_form"""
-i = 3
 
-def plural_form(i, **kwargs):
-    noun1 = kwargs.get('noun1', '')
-    noun2 = kwargs.get('noun2', '')
-    noun3 = kwargs.get('noun3', '')
-    i = int(str(i)[-2:])
+def plural_form(vol, noun1 = '-', noun2 = '-', noun3 = '-'):
+    i = int(str(vol)[-2:])
 
     if i > 9 and i < 21 or i%10 > 4 and i%10 < 10:
         noun = noun2
@@ -27,6 +23,4 @@ def plural_form(i, **kwargs):
         else:
             noun = noun3
 
-    return noun
-
-print(str(i) + ' ' + plural_form(i, noun1='яблоко', noun2='яблок', noun3='яблока'))
+    return print(str(i) + ' ' + noun)
