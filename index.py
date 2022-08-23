@@ -30,3 +30,30 @@ def plural_form(vol, noun1, noun2, noun3):
     return noun
     
 print(vol, plural_form(vol, noun1, noun2, noun3))
+
+'''Декоратор html'''
+def html(param1='', **kwargs):
+    def decorator(decorated_function):
+        def wrapper_over_decorated_function(*args):
+            # resalt_kwargs = str(kwargs)
+            if kwargs:
+                resalt_kwargs = ''
+                for k, v in kwargs.items():
+                    resalt_kwargs += f' {k}="{v}"'
+            else:
+                resalt_kwargs = ''
+            resalt = str('<'+ param1 + resalt_kwargs + '>'+ decorated_function(*args) + '</' + param1 + '>')
+            return resalt
+        return wrapper_over_decorated_function
+    # html_code = wrapper + {args}#  + {kwargs}
+    return decorator
+
+
+@html('body')
+@html('div', width=200, height=100)
+@html('a', href='https://yandex.ru/')
+def to_string(input_value):
+    return str(input_value)
+
+
+print(to_string('ссылка на яндекс'))
